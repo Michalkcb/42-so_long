@@ -6,12 +6,13 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 14:11:47 by mbany             #+#    #+#             */
-/*   Updated: 2024/04/05 15:01:59 by mbany            ###   ########.fr       */
+/*   Updated: 2024/10/26 14:57:59 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-void ft_put_c(char c, int *len)
+
+void	ft_put_c(char c, int *len)
 {
 	write(1, &c, 1);
 	(*len)++;
