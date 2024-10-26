@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
+/*   By: michalkcb <michalkcb@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 18:11:34 by mbany             #+#    #+#             */
-/*   Updated: 2024/10/26 14:52:23 by mbany            ###   ########.fr       */
+/*   Updated: 2024/10/26 23:52:53 by michalkcb        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,20 @@ void	display_moves_and_collectibles(t_game *game)
 	free(moves);
 	free(collectibles);
 }
+
+// void add_enemy(t_game *game, int x, int y)
+// {
+//     t_enemy *new_enemy;
+
+//     new_enemy = malloc(sizeof(t_enemy));
+//     if (!new_enemy)
+//         end_game(game, "Malloc error", 1); // Zakończ grę, jeśli brak pamięci
+//     new_enemy->x = x;
+//     new_enemy->y = y;
+//     new_enemy->next = game->enemies; // Dodaj nowego przeciwnika na początek listy
+//     game->enemies = new_enemy;
+// }
+
 
 	// ft_printf("Moves: %s\n", moves);
 	// ft_printf("Collectibles: %s\n", collectibles);

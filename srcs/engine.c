@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   engine.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
+/*   By: michalkcb <michalkcb@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 18:12:40 by mbany             #+#    #+#             */
-/*   Updated: 2024/10/24 18:12:41 by mbany            ###   ########.fr       */
+/*   Updated: 2024/10/27 00:07:08 by michalkcb        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ void	init_positions(t_game *game)
 				game->map.x_exit_pos = x;
 				game->map.y_exit_pos = y;
 			}
+
 			y++;
 		}
 		x++;
@@ -51,6 +52,8 @@ void	move_up(t_game *game)
 		game->moves++;
 		if (game->map.map[y - 1][x] == 'C')
 			game->collectibles--;
+		if (game->map.map[y - 1][x] == 'T')
+            end_game(game, "Loose", 1);
 		game->map.map[y][x] = '0';
 		game->map.map[game->map.y_exit_pos][game->map.x_exit_pos] = 'E';
 		if (game->map.map[y - 1][x] == 'E' && game->collectibles == 0)
@@ -74,6 +77,8 @@ void	move_down(t_game *game)
 		game->moves++;
 		if (game->map.map[y + 1][x] == 'C')
 			game->collectibles--;
+		if (game->map.map[y + 1][x] == 'T')
+            end_game(game, "Loose", 1);
 		game->map.map[y][x] = '0';
 		game->map.map[game->map.y_exit_pos][game->map.x_exit_pos] = 'E';
 		if (game->map.map[y + 1][x] == 'E' && game->collectibles == 0)
@@ -97,6 +102,8 @@ void	move_left(t_game *game)
 		game->moves++;
 		if (game->map.map[y][x - 1] == 'C')
 			game->collectibles--;
+		if (game->map.map[y - 1][x] == 'T')
+            end_game(game, "Loose", 1);
 		game->map.map[y][x] = '0';
 		game->map.map[game->map.y_exit_pos][game->map.x_exit_pos] = 'E';
 		if (game->map.map[y][x - 1] == 'E' && game->collectibles == 0)
@@ -120,6 +127,8 @@ void	move_right(t_game *game)
 		game->moves++;
 		if (game->map.map[y][x + 1] == 'C')
 			game->collectibles--;
+		if (game->map.map[y + 1][x] == 'T')
+            end_game(game, "Loose", 1);
 		game->map.map[y][x] = '0';
 		game->map.map[game->map.y_exit_pos][game->map.x_exit_pos] = 'E';
 		if (game->map.map[y][x + 1] == 'E' && game->collectibles == 0)

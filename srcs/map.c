@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
+/*   By: michalkcb <michalkcb@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 18:11:58 by mbany             #+#    #+#             */
-/*   Updated: 2024/10/24 18:12:01 by mbany            ###   ########.fr       */
+/*   Updated: 2024/10/26 22:55:04 by michalkcb        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ void	validate_elements(t_game *game)
 		j = 0;
 		while (j < game->map.width)
 		{
-			if (ft_strchr("01CEP", game->map.map[i][j]) == NULL)
+			if (ft_strchr("01CEPT", game->map.map[i][j]) == NULL)
 				end_game(game, "Invalid element on the map", 1);
 			j++;
 		}

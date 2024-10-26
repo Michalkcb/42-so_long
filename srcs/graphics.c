@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   graphics.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
+/*   By: michalkcb <michalkcb@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 18:12:29 by mbany             #+#    #+#             */
-/*   Updated: 2024/10/24 18:12:30 by mbany            ###   ########.fr       */
+/*   Updated: 2024/10/27 00:01:25 by michalkcb        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ void	init_sprites(t_game *game)
 {
 	game->collectible = create_sprite(game, COLLECTIBLE);
 	game->exit = create_sprite(game, EXIT);
+	game->enemy = create_sprite(game, ENEMY);
 	game->wall = create_sprite(game, WALL);
 	game->floor = create_sprite(game, FLOOR);
 	game->player.player_r = create_sprite(game, PLAYER_R);
@@ -74,6 +75,8 @@ int	render_map(t_game *game)
 				render_sprite(game, &game->floor, line, column);
 			if (game->map.map[line][column] == 'P')
 				render_player(game, line, column);
+			if (game->map.map[line][column] == 'T')
+				render_sprite(game, &game->enemy, line, column);
 			column++;
 		}
 		line++;

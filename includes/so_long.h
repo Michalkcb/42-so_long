@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
+/*   By: michalkcb <michalkcb@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 17:58:58 by mbany             #+#    #+#             */
-/*   Updated: 2024/10/24 17:59:01 by mbany            ###   ########.fr       */
+/*   Updated: 2024/10/26 23:47:10 by michalkcb        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@
 # define EXIT "sprites/exit.xpm"
 # define WALL "sprites/wall.xpm"
 # define FLOOR "sprites/floor.xpm"
+# define ENEMY "sprites/enemy.xpm"
 # define PLAYER_R "sprites/player_r.xpm"
 # define PLAYER_L "sprites/player_l.xpm"
 # define PLAYER_U "sprites/player_u.xpm"
@@ -68,6 +69,7 @@ typedef struct s_game
 	t_image		exit;
 	t_image		wall;
 	t_image		floor;
+	t_image		enemy;
 	t_player	player;
 }	t_game;
 
@@ -96,6 +98,7 @@ void	count_elements(t_game *game);
 int		open_map(char *path, t_game *game);
 char	*split_line(char *line);
 void	display_moves_and_collectibles(t_game *game);
+// void	add_enemy(t_game *game, int x, int y);
 // void	draw_map(t_game *game);
 
 //Messages
