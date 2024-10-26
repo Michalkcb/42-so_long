@@ -6,11 +6,15 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 18:12:11 by mbany             #+#    #+#             */
-/*   Updated: 2024/10/24 18:12:13 by mbany            ###   ########.fr       */
+/*   Updated: 2024/10/26 14:47:52 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+		// draw_map(game);
+		// draw_map(game);
+		// draw_map(game);
+		// draw_map(game);
 
 static int	key_hook(int keycode, t_game *game)
 {
@@ -19,22 +23,18 @@ static int	key_hook(int keycode, t_game *game)
 	else if (keycode == KEY_W || keycode == KEY_AR_U)
 	{
 		move_up(game);
-		// draw_map(game);
 	}
 	else if (keycode == KEY_S || keycode == KEY_AR_D)
 	{
 		move_down(game);
-		// draw_map(game);
 	}
 	else if (keycode == KEY_A || keycode == KEY_AR_L)
 	{
 		move_left(game);
-		// draw_map(game);
 	}
 	else if (keycode == KEY_D || keycode == KEY_AR_R)
 	{
 		move_right(game);
-		// draw_map(game);
 	}
 	return (0);
 }
