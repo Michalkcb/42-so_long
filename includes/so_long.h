@@ -6,7 +6,7 @@
 /*   By: michalkcb <michalkcb@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 17:58:58 by mbany             #+#    #+#             */
-/*   Updated: 2024/10/27 20:49:23 by michalkcb        ###   ########.fr       */
+/*   Updated: 2024/10/27 21:10:33 by michalkcb        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 
 # define SPRITE_SIZE 50
 
-# define COLLECTIBLE "sprites/cherry.xpm"
+# define COLLECTIBLE "sprites/sock.xpm"
 # define EXIT "sprites/exit.xpm"
 # define WALL "sprites/wall.xpm"
 # define FLOOR "sprites/floor.xpm"
