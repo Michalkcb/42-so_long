@@ -6,7 +6,7 @@
 /*   By: michalkcb <michalkcb@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 18:11:24 by mbany             #+#    #+#             */
-/*   Updated: 2024/10/27 21:03:21 by michalkcb        ###   ########.fr       */
+/*   Updated: 2024/10/27 21:21:12 by michalkcb        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	print_message_from_file(char *filename)
 
 	fd = open(filename, O_RDONLY);
 	if (fd < 0)
-		return;
+		return ;
 	line = get_next_line(fd);
 	while (line)
 	{
@@ -43,7 +43,6 @@ void	exit_message(t_game *game, char *message, int code)
 		print_message_from_file("abort.txt");
 	exit(code);
 }
-
 
 void	destroy_images(t_game *game)
 {
