@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   graphics.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: michalkcb <michalkcb@student.42.fr>        +#+  +:+       +#+        */
+/*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 18:12:29 by mbany             #+#    #+#             */
-/*   Updated: 2024/10/27 00:01:25 by michalkcb        ###   ########.fr       */
+/*   Updated: 2024/10/27 16:33:31 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,18 +65,7 @@ int	render_map(t_game *game)
 		column = 0;
 		while (column < game->map.width)
 		{
-			if (game->map.map[line][column] == 'E')
-				render_sprite(game, &game->exit, line, column);
-			if (game->map.map[line][column] == 'C')
-				render_sprite(game, &game->collectible, line, column);
-			if (game->map.map[line][column] == '1')
-				render_sprite(game, &game->wall, line, column);
-			if (game->map.map[line][column] == '0')
-				render_sprite(game, &game->floor, line, column);
-			if (game->map.map[line][column] == 'P')
-				render_player(game, line, column);
-			if (game->map.map[line][column] == 'T')
-				render_sprite(game, &game->enemy, line, column);
+			ft_insert_pic(line, column, game);
 			column++;
 		}
 		line++;
