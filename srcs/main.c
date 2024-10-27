@@ -6,15 +6,11 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 18:12:11 by mbany             #+#    #+#             */
-/*   Updated: 2024/10/26 14:47:52 by mbany            ###   ########.fr       */
+/*   Updated: 2024/10/27 16:02:56 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-		// draw_map(game);
-		// draw_map(game);
-		// draw_map(game);
-		// draw_map(game);
 
 static int	key_hook(int keycode, t_game *game)
 {
