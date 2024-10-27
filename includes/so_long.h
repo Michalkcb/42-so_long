@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
+/*   By: michalkcb <michalkcb@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 17:58:58 by mbany             #+#    #+#             */
-/*   Updated: 2024/10/27 16:36:16 by mbany            ###   ########.fr       */
+/*   Updated: 2024/10/27 20:49:23 by michalkcb        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,6 +102,7 @@ void	display_moves_and_collectibles(t_game *game);
 void	ft_insert_pic(int line, int column, t_game *game);
 
 //Messages
+void	print_message_from_file(char *filename);
 int		end_game(t_game *game, char *message, int code);
 void	destroy_images(t_game *game);
 void	exit_message(t_game *game, char *message, int code);

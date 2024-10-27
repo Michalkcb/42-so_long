@@ -3,43 +3,47 @@
 /*                                                        :::      ::::::::   */
 /*   messages.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
+/*   By: michalkcb <michalkcb@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 18:11:24 by mbany             #+#    #+#             */
-/*   Updated: 2024/10/27 16:35:24 by mbany            ###   ########.fr       */
+/*   Updated: 2024/10/27 21:03:21 by michalkcb        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	exit_message(t_game *game, char *message, int code)
+void	print_message_from_file(char *filename)
 {
 	int		fd;
 	char	*line;
 
-	if (message)
+	fd = open(filename, O_RDONLY);
+	if (fd < 0)
+		return;
+	line = get_next_line(fd);
+	while (line)
 	{
-		if (ft_strcmp(message, "Loose") == 0)
-			ft_printf("You Loose\n");
-		else if (ft_strcmp(message, "Win") == 0)
-		{
-			ft_printf("You finished the game in %d moves!\n", game->moves);
-			fd = open("victory.txt", O_RDONLY);
-			line = get_next_line(fd);
-			while (line)
-			{
-				ft_printf("%s", line);
-				free(line);
-				line = get_next_line(fd);
-			}
-			close(fd);
-		}
-		else
-			ft_printf("Map is incorrect or you aborted game after %d moves \n",
-				game->moves);
-		exit(code);
+		ft_printf("%s", line);
+		free(line);
+		line = get_next_line(fd);
 	}
+	close(fd);
 }
+
+void	exit_message(t_game *game, char *message, int code)
+{
+	if (message && ft_strcmp(message, "Loose") == 0)
+		print_message_from_file("loss.txt");
+	else if (message && ft_strcmp(message, "Win") == 0)
+	{
+		ft_printf("You finished the game in %d moves!\n", game->moves);
+		print_message_from_file("victory.txt");
+	}
+	else if (message)
+		print_message_from_file("abort.txt");
+	exit(code);
+}
+
 
 void	destroy_images(t_game *game)
 {
