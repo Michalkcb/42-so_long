@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: michalkcb <michalkcb@student.42.fr>        +#+  +:+       +#+        */
+/*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 18:11:34 by mbany             #+#    #+#             */
-/*   Updated: 2024/10/26 23:52:53 by michalkcb        ###   ########.fr       */
+/*   Updated: 2024/10/27 16:37:10 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,37 +58,18 @@ void	display_moves_and_collectibles(t_game *game)
 	free(collectibles);
 }
 
-// void add_enemy(t_game *game, int x, int y)
-// {
-//     t_enemy *new_enemy;
-
-//     new_enemy = malloc(sizeof(t_enemy));
-//     if (!new_enemy)
-//         end_game(game, "Malloc error", 1); // Zakończ grę, jeśli brak pamięci
-//     new_enemy->x = x;
-//     new_enemy->y = y;
-//     new_enemy->next = game->enemies; // Dodaj nowego przeciwnika na początek listy
-//     game->enemies = new_enemy;
-// }
-
-
-	// ft_printf("Moves: %s\n", moves);
-	// ft_printf("Collectibles: %s\n", collectibles);
-// void	draw_map(t_game *game)
-// {
-// 	int	i;
-
-// 	i = 0;
-// 	while (i < game->map.height)
-// 	{
-// 		ft_printf("%s\n", game->map.map[i]);
-// 		i++;
-// 	}
-// 	ft_printf("x_player_pos: %d\n", game->map.x_player_pos);
-// 	ft_printf("y_player_pos: %d\n", game->map.y_player_pos);
-// 	ft_printf("x_exit_pos: %d\n", game->map.x_exit_pos);
-// 	ft_printf("y_exit_pos: %d\n", game->map.y_exit_pos);
-// 	ft_printf("moves: %d\n", game->moves);
-// 	ft_printf("collectibles: %d\n", game->collectibles);
-// 	ft_printf("\n");
-// }
+void	ft_insert_pic(int line, int column, t_game *game)
+{
+	if (game->map.map[line][column] == 'E')
+		render_sprite(game, &game->exit, line, column);
+	if (game->map.map[line][column] == 'C')
+		render_sprite(game, &game->collectible, line, column);
+	if (game->map.map[line][column] == '1')
+		render_sprite(game, &game->wall, line, column);
+	if (game->map.map[line][column] == '0')
+		render_sprite(game, &game->floor, line, column);
+	if (game->map.map[line][column] == 'P')
+		render_player(game, line, column);
+	if (game->map.map[line][column] == 'T')
+		render_sprite(game, &game->enemy, line, column);
+}
