@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: michalkcb <michalkcb@student.42.fr>        +#+  +:+       +#+        */
+/*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 17:58:58 by mbany             #+#    #+#             */
-/*   Updated: 2024/10/26 23:47:10 by michalkcb        ###   ########.fr       */
+/*   Updated: 2024/10/27 16:36:16 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include "mlx.h"
 # include "key_linux.h"
 # include <fcntl.h>
+# include <unistd.h>
 
 # define SPRITE_SIZE 50
 
@@ -98,8 +99,7 @@ void	count_elements(t_game *game);
 int		open_map(char *path, t_game *game);
 char	*split_line(char *line);
 void	display_moves_and_collectibles(t_game *game);
-// void	add_enemy(t_game *game, int x, int y);
-// void	draw_map(t_game *game);
+void	ft_insert_pic(int line, int column, t_game *game);
 
 //Messages
 int		end_game(t_game *game, char *message, int code);
