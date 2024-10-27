@@ -6,7 +6,7 @@
 /*   By: michalkcb <michalkcb@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 18:11:24 by mbany             #+#    #+#             */
-/*   Updated: 2024/10/27 21:21:12 by michalkcb        ###   ########.fr       */
+/*   Updated: 2024/10/27 22:08:12 by michalkcb        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,20 @@ void	exit_message(t_game *game, char *message, int code)
 {
 	if (message && ft_strcmp(message, "Loose") == 0)
 		print_message_from_file("loss.txt");
+	else if(message && ft_strcmp(message, "No map") == 0)
+		print_message_from_file("nomap.txt");
+	else if(message && ft_strcmp(message, "Map not rectangular") == 0)
+		print_message_from_file("NotRect.txt");
+	else if(message && ft_strcmp(message, "Map too small") == 0)
+		print_message_from_file("TooSmall.txt");
+	else if(message && ft_strcmp(message, "Malloc error") == 0)
+		print_message_from_file("Malloc.txt");
+	else if(message && ft_strcmp(message, "Invalid element on the map") == 0)
+		print_message_from_file("InvalidElement.txt");
+	else if(message && ft_strcmp(message, "Invalid wall") == 0)
+		print_message_from_file("InvalidWall.txt");
+	else if(message && ft_strcmp(message, "Wrong number of elements on the map") == 0)
+		print_message_from_file("NbrElements.txt");
 	else if (message && ft_strcmp(message, "Win") == 0)
 	{
 		ft_printf("You finished the game in %d moves!\n", game->moves);
